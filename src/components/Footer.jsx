@@ -32,12 +32,12 @@ export default function Footer() {
         {/* ================= RIGHT COLUMN ================= */}
         <div className="flex flex-col gap-8 lg:basis-[70%]">
           {/* Row 1: Email */}
-<h3
+<a href="mailto:admin@fastlink.com"
   className={`${bebasNeue.className} text-white uppercase text-[35px] lg:text-[104px] font-semibold lg:leading-32`}
   style={{ letterSpacing: "5px"}}
 >
   admin@fastlink.com
-</h3>
+</a>
 
 
           {/* Separator */}
