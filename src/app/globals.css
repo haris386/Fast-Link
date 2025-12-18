@@ -123,3 +123,42 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* ================= ABOUT OVERLAP WRAPPER ================= */
+.about-overlap-wrapper {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 600px;   /* FIXED width = zoom safe */
+  height: 420px;
+  z-index: 20;
+}
+
+/* ================= RED CARD ================= */
+.about-red-card {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 450px;
+  height: 320px;
+  background-color: #EA2127;
+  border-radius: 20px;
+}
+
+/* ================= CAR IMAGE ================= */
+.about-car-image {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 550px;
+  border-radius: 10px;
+  z-index: 30;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .about-overlap-wrapper {
+    display: none;
+  }
+}

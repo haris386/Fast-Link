@@ -19,7 +19,8 @@ export default function HeroSection() {
         backgroundPositionY: "bottom",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 flex flex-col gap-0 lg:gap-12 w-full mt-[10%]">
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-0" />
+       <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-6 flex flex-col gap-0 lg:gap-12 w-full mt-[10%]">
         {/* Heading */}
         <div className="text-left mt-8 md:mt-0">
           <h1 className={`${bebasNeue.className} text-[65px] lg:text-[100px] font-bold text-white leading-tight uppercase`}>
