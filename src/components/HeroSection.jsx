@@ -3,6 +3,9 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Bebas_Neue } from "next/font/google";
 import Navbar from "./Navbar";
+import WritingText from "./WritingText";
+import { motion } from "framer-motion";
+
 
 // Bebas Neue font instance
 const bebasNeue = Bebas_Neue({
@@ -28,9 +31,12 @@ export default function HeroSection() {
        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-6 flex flex-col gap-0 lg:gap-12 w-full mt-[10%]">
         {/* Heading */}
         <div className="text-left mt-8 md:mt-0">
-          <h1 className={`${bebasNeue.className} text-[65px] lg:text-[100px] font-bold text-white leading-tight uppercase`}>
-            Move Smarter,<br />Ride Faster
-          </h1>
+         <h1 className={`${bebasNeue.className} text-[65px] lg:text-[100px] font-bold text-white leading-tight uppercase`}>
+  <WritingText text="Move Smarter," />
+  <br />
+  <WritingText text="Ride Faster" />
+</h1>
+
         </div>
 
         {/* Text + Buttons Row */}
@@ -40,10 +46,20 @@ export default function HeroSection() {
 
           {/* Right content */}
           <div className="flex-1 flex flex-col gap-4">
-            <p className="text-white lg:text-[15px] max-w-md">
-              Fastlink brings riders and drivers together for safe, smooth, and reliable trips. 
-              No matter your destination, we’ll get you there quickly and comfortably.
-            </p>
+          <motion.p
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    duration: 0.8,
+    delay: 0.8,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="text-white lg:text-[15px] max-w-md"
+>
+  Fastlink brings riders and drivers together for safe, smooth, and reliable trips.
+  No matter your destination, we’ll get you there quickly and comfortably.
+</motion.p>
+
 
             {/* Buttons */}
             <div className="flex flex-row gap-4 mt-2 flex-wrap">
