@@ -24,7 +24,7 @@ export default function HeroSection() {
       <div className="absolute top-0 left-0 w-full z-20">
         <Navbar />
       </div>
-      <div className="min-h-screen absolute inset-0 from-black via-black/60 to-transparent z-0" />
+      <div className="min-h-screen absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-0" />
        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-6 flex flex-col gap-0 lg:gap-12 w-full mt-[10%]">
         {/* Heading */}
         <div className="text-left mt-8 md:mt-0">
