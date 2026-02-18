@@ -2,6 +2,9 @@
 
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
+import WritingText from "./WritingText";
+import { motion } from "framer-motion";
+
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -46,7 +49,7 @@ export default function How() {
           className={`${bebasNeue.className} text-white uppercase text-[32px] lg:text-[45px]`}
           style={{ letterSpacing: "4px", lineHeight:"55px" }}
         >
-          How FastLink Works
+          <WritingText text="How FastLink Works" />
         </h2>
 
         {/* Cards */}
@@ -79,12 +82,18 @@ export default function How() {
                   className={`${bebasNeue.className} uppercase text-white text-[22px]`}
                   style={{ letterSpacing: "3px", lineHeight:"20px" }}
                 >
-                  {step.title}
+                  <WritingText text={step.title} />
                 </h3>
 
-                <p className="text-white text-[14px] leading-[22px] font-[300]">
-                  {step.desc}
-                </p>
+               <motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+  className="text-white text-[14px] leading-[22px] font-[300]"
+>
+  {step.desc}
+</motion.p>
+
               </div>
             </div>
           ))}
@@ -111,11 +120,13 @@ export default function How() {
     className={`${bebasNeue.className} relative z-10 text-white uppercase text-center text-[42px] sm:text-[48px] lg:text-[8rem] leading-tight`}
     style={{ letterSpacing: "4px" }}
   >
-    <span className="text-[#EA2127]">Pushing</span> beyond <br />
-    speed, chasing <br />
-    greatness <span className="text-[#EA2127]">FastLink</span> <br />
-    redefines every <br />
-    <span className="text-[#EA2127]">limit.</span>
+     <WritingText className="text-[#EA2127]" text="Pushing" />
+     <WritingText text="beyond" /> <br />
+    <WritingText text="speed, chasing" /> <br />
+    <WritingText  text="greatness" /> 
+    <WritingText className="text-[#EA2127]" text="Fastlink" /> <br />
+    <WritingText text="redefines every" /> <br />
+    <WritingText className="text-[#EA2127]" text="limit." />
   </h2>
 
   {/* TOP GRADIENT (OVER TEXT) */}
