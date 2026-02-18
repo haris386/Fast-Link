@@ -13,7 +13,7 @@ const FastlinkNoSSR = dynamic(() => import("@/components/Fasklink.jsx"), { ssr: 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroSection />
       <About />
       <How />

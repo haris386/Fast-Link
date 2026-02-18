@@ -13,7 +13,7 @@ export default function Fastlink() {
 
   return (
     <>
-      <section className="w-full bg-[#050502] relative overflow-hidden py-32 lg:py-12">
+      <section className="w-full bg-[#050502] relative overflow-hidden lg:py-12 h-[125vh] lg:h-auto">
         {/* ===================== Animated Sliding Text ===================== */}
         <div className="flex flex-col gap-12">
           {/* Row 1 */}
@@ -22,7 +22,7 @@ export default function Fastlink() {
             style={{ position: "relative" }}
           >
             <div
-              className="flex whitespace-nowrap"
+              className="flex whitespace-nowrap mt-[35%] mb-[25%]"
               style={{ animation: "scrollText 30s linear infinite" }}
             >
               <span
@@ -90,7 +90,7 @@ export default function Fastlink() {
             style={{ position: "relative" }}
           >
             <div
-              className="flex whitespace-nowrap"
+              className="flex whitespace-nowrap mt-[35%]"
               style={{ animation: "scrollText 30s linear infinite" }}
             >
               <span
@@ -133,8 +133,8 @@ export default function Fastlink() {
           </div>
         </div>
 
-        {/* Mobile version (stacked vertically but absolute to stay in front) */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 lg:hidden z-20 pointer-events-none">
+        {/* Mobile version */}
+        <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 lg:hidden z-20 pointer-events-none">
           <div className="flex justify-center">
             <Image src="/Images/FL1.png" alt="FL1" width={200} height={200} />
           </div>
@@ -166,7 +166,7 @@ export default function Fastlink() {
           }
         `}</style>
       </section>
-      <section className="w-full bg-black py-20 px-6 lg:px-16">
+      <section className="w-full bg-black py-10 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto flex flex-col gap-6 lg:mt-24">
           {/* ===== Row 1 ===== */}
           <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">

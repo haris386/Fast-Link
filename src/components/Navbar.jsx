@@ -9,7 +9,7 @@ export default function Navbar() {
   const menuItems = ["Home", "About", "How It Works", "FAQ", "Call To Action"];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <nav className="w-full z-50 bg-transparent">
       <div className="mx-auto flex max-w-7xl items-center justify-end lg:justify-between px-6 py-4">
         {/* Left Menu Items */}
         <div className="hidden md:flex items-center gap-6 font-sans text-[14px] text-white">
@@ -25,7 +25,7 @@ export default function Navbar() {
           <img
             src="/Logos/FLHeader.png"
             alt="Fast-Link Logo"
-            className="object-contain w-[120px] h-[40px]"
+            className="object-contain w-[100%] h-[40px]"
           />
         </div>
 
