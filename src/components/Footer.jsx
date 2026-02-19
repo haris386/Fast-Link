@@ -79,10 +79,10 @@ export default function Footer({ setFormOpen }) {
 
             {/* Center Links */}
             <div className="flex flex-col gap-3 text-white text-[16px] font-[200] min-w-[140px] md:min-w-[160px]">
-              <a href="#" className="hover:underline cursor-pointer">
+              <a href="#about" className="hover:underline cursor-pointer">
                 About
               </a>
-              <a href="#" className="hover:underline cursor-pointer">
+              <a href="#how-it-works" className="hover:underline cursor-pointer">
                 How it works
               </a>
               <a href="#" className="hover:underline cursor-pointer">
