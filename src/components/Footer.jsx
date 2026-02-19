@@ -2,6 +2,8 @@
 
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Bebas_Neue } from "next/font/google";
+import WritingText from "./WritingText";
+import { motion } from "framer-motion";
 
 // Bebas Neue font instance
 const bebasNeue = Bebas_Neue({
@@ -32,13 +34,13 @@ export default function Footer() {
         {/* ================= RIGHT COLUMN ================= */}
         <div className="flex flex-col gap-8 lg:basis-[70%]">
           {/* Row 1: Email */}
-<a href="mailto:admin@fastlink.com"
-  className={`${bebasNeue.className} text-white uppercase text-[35px] lg:text-[104px] font-semibold lg:leading-32`}
-  style={{ letterSpacing: "5px"}}
->
-  admin@fastlink.com
-</a>
-
+          <a
+            href="mailto:admin@fastlink.com"
+            className={`${bebasNeue.className} text-white uppercase text-[35px] lg:text-[104px] font-semibold lg:leading-32`}
+            style={{ letterSpacing: "5px" }}
+          >
+            <WritingText text="admin@fastlink.com" />
+          </a>
 
           {/* Separator */}
           <div className="w-full h-[1px] bg-white opacity-60" />
@@ -109,15 +111,19 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-    <div className="w-full bg-white flex justify-center">
-  <img
-    src="/Images/footerFL.png"
-    alt="Fastlink"
-    className="object-contain"
-  />
-</div>
-
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="w-full bg-white flex justify-center"
+      >
+        <img
+          src="/Images/footerFL.png"
+          alt="Fastlink"
+          className="object-contain"
+        />
+      </motion.div>
     </footer>
   );
 }

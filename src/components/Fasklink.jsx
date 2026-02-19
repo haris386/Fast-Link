@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Bebas_Neue } from "next/font/google";
+import { motion } from "framer-motion";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function Fastlink() {
             style={{ position: "relative" }}
           >
             <div
-              className="flex whitespace-nowrap mt-[35%] mb-[25%]"
+              className="flex whitespace-nowrap mt-[35%] mb-[25%] lg:mt-0 lg:mb-0"
               style={{ animation: "scrollText 30s linear infinite" }}
             >
               <span
@@ -90,7 +91,7 @@ export default function Fastlink() {
             style={{ position: "relative" }}
           >
             <div
-              className="flex whitespace-nowrap mt-[35%]"
+             className="flex whitespace-nowrap mt-[35%] lg:mt-0"
               style={{ animation: "scrollText 30s linear infinite" }}
             >
               <span
@@ -166,12 +167,19 @@ export default function Fastlink() {
           }
         `}</style>
       </section>
-      <section className="w-full bg-black py-10 px-6 lg:px-16">
+      <section className="w-full bg-black py-10 px-6 lg:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col gap-6 lg:mt-24">
           {/* ===== Row 1 ===== */}
           <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
             {/* Card 1 – 40% (solid color, no image overlay needed) */}
-            <div className="lg:col-span-4 bg-[#EA2127] rounded-2xl p-8 flex flex-col justify-end min-h-[300px]">
+            <motion.div
+  initial={{ opacity: 0, x: -100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+  className="lg:col-span-4 bg-[#EA2127] rounded-2xl p-8 flex flex-col justify-end min-h-[300px]"
+>
+
               <h3
                 className={`${bebasNeue.className} text-white text-4xl leading-tight tracking-wider mb-4`}
               >
@@ -184,10 +192,17 @@ export default function Fastlink() {
                 updates after each ride. This score ensures transparency,
                 fairness, and the best ride experience for passengers.
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 2 – 60% */}
-            <div className="lg:col-span-6 relative rounded-2xl overflow-hidden min-h-[300px]">
+            <motion.div
+  initial={{ opacity: 0, x: 100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+  className="lg:col-span-6 relative rounded-2xl overflow-hidden min-h-[300px]"
+>
+
               <Image
                 src="/Images/RQ.png"
                 alt="Ride Quality"
@@ -212,13 +227,20 @@ export default function Fastlink() {
                   well-maintained.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* ===== Row 2 ===== */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card 1 */}
-            <div className="relative rounded-2xl overflow-hidden min-h-[260px]">
+           <motion.div
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+  className="relative rounded-2xl overflow-hidden min-h-[260px]"
+>
+
               <Image
                 src="/Images/PR.png"
                 alt="Passenger Ratings"
@@ -239,10 +261,17 @@ export default function Fastlink() {
                   on behavior and helpfulness.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="relative rounded-2xl overflow-hidden min-h-[260px]">
+           <motion.div
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+  className="relative rounded-2xl overflow-hidden min-h-[260px]"
+>
+
               <Image
                 src="/Images/AER.png"
                 alt="Accurate Fare Reporting"
@@ -263,10 +292,17 @@ export default function Fastlink() {
                   for fair pricing.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="relative rounded-2xl overflow-hidden min-h-[260px]">
+           <motion.div
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+  className="relative rounded-2xl overflow-hidden min-h-[260px]"
+>
+
               <Image
                 src="/Images/NB.png"
                 alt="Navigation Behavior"
@@ -287,7 +323,7 @@ export default function Fastlink() {
                   managing traffic efficiently.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
