@@ -14,7 +14,7 @@ export default function Navbar() {
         {/* Left Menu Items */}
         <div className="hidden md:flex items-center gap-6 font-sans text-[14px] text-white">
           {menuItems.map((item) => (
-            <a key={item} href="#" className="hover:text-gray-600 transition-colors">
+            <a key={item} href="#" className="hover:text-red-400 transition-colors">
               {item}
             </a>
           ))}
