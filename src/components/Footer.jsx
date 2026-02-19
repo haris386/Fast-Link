@@ -11,7 +11,7 @@ const bebasNeue = Bebas_Neue({
   weight: ["400"],
 });
 
-export default function Footer() {
+export default function Footer({ setFormOpen }) {
   return (
     <footer className="w-full bg-[#EA2127]">
       {/* Container */}
@@ -79,23 +79,23 @@ export default function Footer() {
 
             {/* Center Links */}
             <div className="flex flex-col gap-3 text-white text-[16px] font-[200] min-w-[140px] md:min-w-[160px]">
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline cursor-pointer">
                 About
               </a>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline cursor-pointer">
                 How it works
               </a>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:underline cursor-pointer">
                 Features
               </a>
             </div>
 
             {/* Right Links */}
             <div className="flex flex-col gap-3 text-white text-[16px] font-[200] min-w-[120px] md:min-w-[140px]">
-              <a href="#" className="hover:underline">
+              <p  onClick={() => setFormOpen(true)} className="hover:underline cursor-pointer">
                 Contact
-              </a>
-              <a href="#" className="hover:underline">
+              </p>
+              <a href="#" className="hover:underline cursor-pointer">
                 Career
               </a>
             </div>

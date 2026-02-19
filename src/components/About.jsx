@@ -12,7 +12,7 @@ const bebasNeue = Bebas_Neue({
 
 export default function About() {
   return (
-    <section className="w-full bg-black overflow-hidden">
+    <section id="about" className="w-full bg-black overflow-hidden">
 
       {/* Container */}
       <div className="mx-auto w-[90%] py-20 flex flex-col gap-8 relative">

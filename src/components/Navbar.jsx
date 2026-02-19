@@ -3,10 +3,16 @@
 import { useState } from "react";
 import { MdKeyboardArrowRight, MdMenu, MdClose } from "react-icons/md";
 
-export default function Navbar() {
+export default function Navbar({ setFormOpen }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const menuItems = ["Home", "About", "How It Works", "FAQ", "Call To Action"];
+  const menuItems = [
+    { label: "Home", id: "home" },
+    { label: "About", id: "about" },
+    { label: "How It Works", id: "how-it-works" },
+    { label: "FAQ", id: "faq" },
+    { label: "Call To Action", id: "cta" },
+  ];
 
   return (
     <nav className="w-full z-50 bg-transparent">
@@ -14,8 +20,12 @@ export default function Navbar() {
         {/* Left Menu Items */}
         <div className="hidden md:flex items-center gap-6 font-sans text-[14px] text-white">
           {menuItems.map((item) => (
-            <a key={item} href="#" className="hover:text-red-400 transition-colors">
-              {item}
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="hover:text-red-400 transition-colors"
+            >
+              {item.label}
             </a>
           ))}
         </div>
@@ -31,7 +41,7 @@ export default function Navbar() {
 
         {/* Right Pill Button */}
         <div className="hidden md:flex items-center">
-          <button className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-medium text-black hover:bg-gray-100 transition-colors">
+          <button onClick={() => setFormOpen(true)} className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-medium text-black hover:bg-gray-100 transition-colors">
             Become a Driver <MdKeyboardArrowRight size={20} />
           </button>
         </div>
@@ -53,11 +63,12 @@ export default function Navbar() {
           <div className="flex flex-col items-center gap-4 py-4 font-sans text-[14px]">
             {menuItems.map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.id}
+                href={`#${item.id}`}
                 className="w-full text-center text-white py-2"
+                onClick={() => setMenuOpen(false)}
               >
-                {item}
+                {item.label}
               </a>
             ))}
             <button className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[14px] font-medium text-black hover:bg-gray-100 transition-colors">

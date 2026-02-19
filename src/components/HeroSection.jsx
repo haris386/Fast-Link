@@ -13,9 +13,10 @@ const bebasNeue = Bebas_Neue({
   weight: ["400"],
 });
 
-export default function HeroSection() {
+export default function HeroSection({ setFormOpen }) {
   return (
     <section
+    id="home"
   className="relative w-full min-h-screen bg-cover bg-center flex items-center"
 
       style={{
@@ -25,7 +26,7 @@ export default function HeroSection() {
       }}
     >
       <div className="absolute top-0 left-0 w-full z-20">
-        <Navbar />
+        <Navbar setFormOpen={setFormOpen} />
       </div>
       <div className="min-h-screen absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent z-0" />
        <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-6 flex flex-col gap-0 lg:gap-12 w-full mt-[10%]">
@@ -69,7 +70,7 @@ export default function HeroSection() {
               </button>
 
               {/* White Pill Button */}
-              <button className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[12px] lg:text-[14px] font-medium text-black hover:bg-gray-100 transition-colors">
+              <button onClick={() => setFormOpen(true)} className="flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[12px] lg:text-[14px] font-medium text-black hover:bg-gray-100 transition-colors">
                 Become a Driver <MdKeyboardArrowRight size={20} />
               </button>
             </div>

@@ -41,7 +41,7 @@ const steps = [
 export default function How() {
   return (
     <>
-    <section className="w-full bg-black pb-0 lg:py-20">
+    <section id="how-it-works" className="w-full bg-black pb-0 lg:py-20">
       {/* Container */}
       <div className="mx-auto w-[90%] flex flex-col gap-10">
         {/* Heading */}
